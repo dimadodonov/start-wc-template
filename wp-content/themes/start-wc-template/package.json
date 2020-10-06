@@ -1,0 +1,99 @@
+{
+    "name": "start-wc-template",
+    "version": "1.0.0",
+    "author": "Dima Dodonov dimadodonov@icloud.com",
+    "license": "MIT",
+    "scripts": {
+        "ghpages": "git subtree push --prefix build origin gh-pages",
+        "start": "gulp",
+        "build": "gulp build:production --production",
+        "precommit": "lint-staged",
+        "commit": "git-cz",
+        "eslint": "eslint --format=node_modules/eslint-formatter-pretty src/js/",
+        "eslint-fix": "npm run eslint -- --fix",
+        "style:lint": "stylelint src/sass/**/*.scss --config ./.stylelintrc",
+        "style:fix": "stylelint src/sass/**/*.scss --fix --config ./.stylelintrc",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "lint-staged": {
+        "src/js/**/*.{js, jsx}": [
+            "node_modules/.bin/eslint",
+            "prettier --write",
+            "git add"
+        ],
+        "src/sass/**/*.scss": [
+            "stylelint --fix --config ./.stylelintrc",
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "devDependencies": {
+        "@babel/polyfill": "^7.4.4",
+        "autoprefixer": "^9.6.1",
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^10.0.2",
+        "babel-loader": "^8.0.6",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-es2015": "^6.24.1",
+        "browser-sync": "^2.26.10",
+        "commitizen": "^4.2.1",
+        "conventional-changelog-cli": "^2.0.23",
+        "css-mqpacker": "^7.0.0",
+        "cssnano": "^4.1.10",
+        "cz-conventional-changelog": "^3.0.2",
+        "del": "^5.0.0",
+        "eslint": "^6.4.0",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-formatter-pretty": "^2.1.1",
+        "eslint-plugin-prettier": "^3.1.0",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-cached": "^1.1.1",
+        "gulp-changed": "^4.0.1",
+        "gulp-cheerio": "^0.6.3",
+        "gulp-cli": "^2.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-if": "^3.0.0",
+        "gulp-imagemin": "^6.0.0",
+        "gulp-include": "^2.4.1",
+        "gulp-inject-string": "^1.1.2",
+        "gulp-newer": "^1.4.0",
+        "gulp-notify": "^3.2.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-svg-sprite": "^1.5.0",
+        "gulp-svgmin": "^2.2.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-util": "^3.0.8",
+        "gulp-watch": "^5.0.1",
+        "gulp4-run-sequence": "^0.4.0",
+        "husky": "^3.0.5",
+        "lint-staged": "^9.2.1",
+        "path": "^0.12.7",
+        "prettier": "^1.18.2",
+        "require-dir": "^1.2.0",
+        "stylelint": "^13.6.1",
+        "stylelint-config-prettier": "^5.2.0",
+        "stylelint-order": "^3.0.1",
+        "stylelint-selector-bem-pattern": "^2.1.0"
+    },
+    "dependencies": {
+        "@fancyapps/fancybox": "^3.5.7",
+        "inputmask": "^5.0.5",
+        "jquery": "^3.4.1",
+        "jquery-mask-plugin": "^1.14.16",
+        "jquery-migrate": "^3.1.0",
+        "svg4everybody": "^2.1.9",
+        "swiper": "^5.2.1"
+    }
+}

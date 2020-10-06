@@ -1,0 +1,29 @@
+@import 'helpers/all';
+@import 'generated/all';
+@import 'base/all';
+
+//Libs
+// @import '../../node_modules/swiper/css/swiper.min';
+// @import '_lib/_jquery.fancybox';
+
+//Customization libs
+@import 'custom';
+
+//Import site components
+@import 'components/breadcrumbs';
+@import 'components/buttons';
+@import 'components/input';
+@import 'components/pagination';
+
+//Import main styles
+@import 'main';
+
+//Import site layouts
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/nav';
+
+//Import pages
+@import 'pages/home';
+// @import 'pages/page';
+// @import 'pages/cart';
